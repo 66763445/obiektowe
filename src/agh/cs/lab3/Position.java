@@ -29,4 +29,10 @@ public class Position {
 		Position p3 = new Position(this.x+p2.x,this.y+p2.y);
 		return p3;
 	}
+	
+	public boolean equals(Position that){
+		if(this.x == that.x && this.y == that.y)
+			return true;
+		return false;
+	}
 }

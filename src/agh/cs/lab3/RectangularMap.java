@@ -29,8 +29,10 @@ public class RectangularMap implements IWorldMap {
 
 	@Override
 	public boolean add(Car car) {
-		cars.add(car);
+		if(this.isOccupied(car.getPosition()))
 		return false;
+		cars.add(car);
+		return true;
 	}
 
 	@Override
@@ -41,7 +43,9 @@ public class RectangularMap implements IWorldMap {
 
 	@Override
 	public boolean isOccupied(Position position) {
-		// TODO Auto-generated method stub
+		for(Car car : this.cars)
+			if(car.getPosition().equals(position))
+				return true;
 		return false;
 	}
 
