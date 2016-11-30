@@ -1,12 +1,9 @@
 package agh.cs.lab3;
 
-import java.util.ArrayList;
-
-public class RectangularMap implements IWorldMap {
+public class RectangularMap extends AbstractWorldMap implements IPositionChangeObserver {
 	
 	private int width;
 	private int height;
-	ArrayList<Car> cars = new ArrayList<>();
 	
 	public RectangularMap(int width, int height){
 		this.width = width;
@@ -56,6 +53,12 @@ public class RectangularMap implements IWorldMap {
 	}
 	public String toString() {
 		return new MapVisualizer().dump(this,new Position(0,0),new Position(width, height));
+	}
+
+	@Override
+	public void positionChanged(Position old, Position new1) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

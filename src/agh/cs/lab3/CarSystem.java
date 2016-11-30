@@ -27,12 +27,12 @@ public class CarSystem {
 			System.out.println(mapdirection1.toString());
 			}
 		Car car1 = new Car();
-		System.out.println(car1.toString());*/
+		System.out.println(car1.toString());
 		MoveDirection[] directions = new OptionsParser().parse(args);
 		IWorldMap map = new RectangularMap(10, 5);
 		map.add(new Car(map));
 		map.add(new Car(map,3,4));
-		map.run(directions);
+		map.run(directions);*/
 		
 	}
 

@@ -2,10 +2,9 @@ package agh.cs.lab3;
 
 import java.util.ArrayList;
 
-public class UnboundedMap implements IWorldMap {
+public class UnboundedMap extends AbstractWorldMap implements IPositionChangeObserver {
 
 	private ArrayList<HayStack> stacks = new ArrayList<>();
-	private ArrayList<Car> cars = new ArrayList<>();
 	
 	public UnboundedMap(ArrayList<HayStack> stacks1){
 		this.stacks.addAll(stacks1);
@@ -77,6 +76,11 @@ public class UnboundedMap implements IWorldMap {
 		}	
 			
 		return new MapVisualizer().dump(this,new Position(w,s),new Position(e,n));
+	}
+
+	@Override
+	public void positionChanged(Position old, Position new1) {
+		
 	}
 
 }
